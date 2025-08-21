@@ -1,0 +1,17 @@
+Important screenshots to take:
+
+The git clone command
+
+Creating the file (ls before and after)
+
+The git status (showing untracked file)
+
+The git add command
+
+The git status (showing staged file)
+
+The git commit command with message
+
+The git push command
+
+Your GitHub repo showing the new file
