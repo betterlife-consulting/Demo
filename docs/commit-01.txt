@@ -1,0 +1,7 @@
+Commit 1: "Initial app structure with HTML"
+
+Git Commands:
+
+git add index.html
+git commit -m "Initial app structure with HTML"
+git push origin main

@@ -1,0 +1,4 @@
+Commit 6: "Add localStorage persistence"
+
+git add index.html
+git commit -m "Add localStorage to persist tasks between sessions"

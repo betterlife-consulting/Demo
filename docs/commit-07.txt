@@ -1,0 +1,4 @@
+Commit 7: "Add clear completed button"
+
+git add index.html
+git commit -m "Add ability to clear all completed tasks"

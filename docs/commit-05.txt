@@ -1,0 +1,59 @@
+Commit 5: "Add filter functionality"
+
+Add filter buttons:
+
+(javascript)
+
+
+// Add filter section HTML:
+<div class="filter-section">
+    <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterTasks('all')">All Tasks</button>
+        <button class="filter-btn" onclick="filterTasks('pending')">Pending</button>
+        <button class="filter-btn" onclick="filterTasks('completed')">Completed</button>
+        <button class="filter-btn" onclick="filterTasks('high')">High Priority</button>
+    </div>
+</div>
+
+// Add filter variables and function:
+let currentFilter = 'all';
+
+function filterTasks(filter) {
+    currentFilter = filter;
+    
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+    
+    renderTasks();
+}
+
+// Modify renderTasks to use filter:
+function renderTasks() {
+    let filteredTasks = tasks;
+    
+    switch(currentFilter) {
+        case 'pending':
+            filteredTasks = tasks.filter(t => !t.completed);
+            break;
+        case 'completed':
+            filteredTasks = tasks.filter(t => t.completed);
+            break;
+        case 'high':
+            filteredTasks = tasks.filter(t => t.priority === 'high');
+            break;
+    }
+    
+    // ... rest of render logic
+}
+
+
+
+
+Git Commands:
+
+git add index.html
+git commit -m "Add filter functionality for tasks"
+git push origin main

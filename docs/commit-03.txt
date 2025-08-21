@@ -1,0 +1,55 @@
+Commit 3: "Add priority levels"
+Add a dropdown for priority selection:
+
+javascript
+
+// In the HTML, modify the input section:
+<div style="margin-top: 15px;">
+    <input type="text" id="taskInput" placeholder="Enter your task...">
+    <select id="prioritySelect" style="padding: 12px; border-radius: 8px;">
+        <option value="low">Low Priority</option>
+        <option value="medium" selected>Medium Priority</option>
+        <option value="high">High Priority</option>
+    </select>
+    <button onclick="addTask()">Add Task</button>
+</div>
+
+// Modify the addTask function:
+function addTask() {
+    const taskInput = document.getElementById('taskInput');
+    const prioritySelect = document.getElementById('prioritySelect');
+    const taskText = taskInput.value.trim();
+
+    if (taskText === '') {
+        alert('Please enter a task!');
+        return;
+    }
+
+    const newTask = {
+        id: Date.now(),
+        text: taskText,
+        priority: prioritySelect.value,  // Add this line
+        completed: false,
+        createdAt: new Date().toLocaleDateString()  // Add this line
+    };
+
+    tasks.push(newTask);
+    renderTasks();
+    taskInput.value = '';
+}
+
+// Add priority badges in renderTasks:
+<span class="priority-badge priority-${task.priority}">${task.priority}</span>
+
+// Add CSS for priority badges:
+.priority-high { background: #fee; color: #c33; }
+.priority-medium { background: #ffeaa7; color: #fdcb6e; }
+.priority-low { background: #e8f5e9; color: #4caf50; }
+
+
+
+Git Commands:
+
+git add index.html
+git commit -m "Add priority levels to tasks"
+git push origin main

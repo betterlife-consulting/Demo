@@ -1,0 +1,42 @@
+Commit 4: "Add statistics dashboard"
+
+Add the stats cards section:
+
+(javascript)
+
+// Add HTML for stats (above tasks-section):
+<div class="stats">
+    <div class="stat-card">
+        <div class="stat-number" id="totalTasks">0</div>
+        <div class="stat-label">Total Tasks</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number" id="completedTasks">0</div>
+        <div class="stat-label">Completed</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number" id="pendingTasks">0</div>
+        <div class="stat-label">Pending</div>
+    </div>
+</div>
+
+// Add updateStats function:
+function updateStats() {
+    const total = tasks.length;
+    const completed = tasks.filter(t => t.completed).length;
+    const pending = total - completed;
+
+    document.getElementById('totalTasks').textContent = total;
+    document.getElementById('completedTasks').textContent = completed;
+    document.getElementById('pendingTasks').textContent = pending;
+}
+
+// Call updateStats() after every renderTasks()
+
+
+
+Git Commands:
+
+git add index.html
+git commit -m "Add statistics dashboard"
+git push origin main

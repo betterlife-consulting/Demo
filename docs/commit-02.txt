@@ -1,0 +1,7 @@
+Commit 2: "Add task creation functionality"
+
+Git Commands:
+
+git add index.html
+git commit -m "Add task creation functionality"
+git push origin main
